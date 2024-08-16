@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>tasks</title>
-    </head>
-    <body>
+{% extends "tasks/layout.html" %}
+{% block body %}
         <ul>
             {% for task in tasks %}
                 <li>{{ task }}</li>
             {% endfor %}
         </ul>
-    </body>
-</html>
+        <a href="{% url 'tasks:add' %}">add a new task</a> <!--incase the url changes we link to the path name instead -->
+{% endblock %}
